@@ -2,5 +2,12 @@
         <div class="card-body">
                 <h5 class="card-title"><img src="assets/img/avatar.png">  Hi, username</h5>
                 <p class="card-text">Wellcome to the HRAC admin panel.</p>
+
+                <canvas baseChart
+                        [datasets]="barChartData"
+                        [labels]="barChartLabels"
+                        [options]="barChartOptions"
+                        [legend]="barChartLegend"
+                        [chartType]="barChartType"></canvas>
         </div>
 </div>

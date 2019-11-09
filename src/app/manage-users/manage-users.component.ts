@@ -22,9 +22,10 @@ export class ManageUsersComponent implements OnInit {
       IndexNumber:  ['', [
         Validators.required
       ],CustomIndexValidator.IndexNumber(this.afs)],
-      RFIDNumber:  ['', [
-        Validators.required,
-      ],CustomRFIDValidator.RFIDNumber(this.afs)],
+      grade: ['', Validators.required],
+      gender: [''],
+      marks: [''],
+      status: ['']
     });
   }
 
@@ -32,9 +33,6 @@ export class ManageUsersComponent implements OnInit {
     return this.IndexForm.get('IndexNumber')
   }
 
-  get RFIDNumber() {
-    return this.IndexForm.get('RFIDNumber')
-  }
 
   onSubmit() {
     let data = this.IndexForm.value;

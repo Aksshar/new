@@ -14,6 +14,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ManageUserService } from './manage-user.service';
 import { ManageHallsService } from './manage-halls.service';
 import { AuthService } from './auth.service';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,11 +25,8 @@ import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
-import { ManageBookingComponent } from './manage-booking/manage-booking.component';
 import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
-import { ManageHallsComponent } from './manage-halls/manage-halls.component';
 import { CurrentsemesterComponent } from './currentsemester/currentsemester.component';
 
 
@@ -42,12 +40,9 @@ import { CurrentsemesterComponent } from './currentsemester/currentsemester.comp
     SigninComponent,
     HomeComponent,
     SignUpComponent,
-    AttendanceComponent,
-    DashboardComponent,
+    AttendanceComponent,    
     ManageUsersComponent,
-    ManageBookingComponent,
     DashboardAdminComponent,
-    ManageHallsComponent,
     CurrentsemesterComponent
  
   ],
@@ -59,22 +54,15 @@ import { CurrentsemesterComponent } from './currentsemester/currentsemester.comp
       { path: 'SignIn', component: SigninComponent },
       { path: 'SignUp', component: SignUpComponent },
       { path: 'Attendance', component: AttendanceComponent },
-      {
-        path: 'Dashboard', component: DashboardComponent,
-        children: [
-          { path: 'dashboard-admin', component: DashboardAdminComponent},
-          { path: 'manage-users', component: ManageUsersComponent },
-          { path: 'manage-booking', component: ManageBookingComponent },
-          { path: 'manage-halls', component: ManageHallsComponent },
-          { path: 'currentsemester', component: CurrentsemesterComponent },
-          
-        ]
-      }
+      { path: 'ManageUsers', component: ManageUsersComponent },
+      { path: 'currentsemester', component: CurrentsemesterComponent },
+      { path: 'Dashboard', component: DashboardAdminComponent}
     ]),
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     NgbModule,
+    ChartsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({ timeOut: 6000, positionClass: 'toast-top-center', preventDuplicates: false }),
